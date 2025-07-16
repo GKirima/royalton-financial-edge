@@ -11,202 +11,333 @@
       --accent: #D4AF37;
       --light: #ffffff;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
+      background-color: #acad96;
     }
+
     header {
       background-color: var(--primary);
       color: var(--light);
-      padding: 0.5em 2em;
+      padding: 0.75em 1.5em;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      height: 70px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 10;
+      position: sticky;
+      top: 0;
     }
+
     header img {
-      height: 60px;
+      height: 50px;
     }
+
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5em;
+      gap: 1.2em;
       margin: 0;
       padding: 0;
     }
+
     nav ul li a {
       color: var(--light);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
     }
+
     #hero {
-      background: url('images/background.jpg') no-repeat center center/cover;
+      background: url('images/backgroundv.jpg') no-repeat center center/cover; 
       color: var(--light);
-      padding: 6em 2em;
+      padding: 8em 1.5em 5em;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
+
     #hero h2 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       margin-bottom: 0.5em;
     }
+
     .btn {
-      padding: 0.75em 1.5em;
+      padding: 0.6em 1.2em;
       background: var(--accent);
       color: var(--primary);
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 4px;
       font-weight: bold;
+      font-size: 0.95em;
     }
+
     section {
-      padding: 2em;
-      max-width: 900px;
+      padding: 1.2em 1.5em;
+      max-width: 860px;
       margin: auto;
     }
+
+    h2, h3 {
+      margin-bottom: 0.5em;
+      color: var(--primary);
+    }
+
+    #services ul, #onboarding ul {
+      padding-left: 1.2em;
+      line-height: 1.6;
+    }
+
+    #about p, #onboarding p {
+      line-height: 1.5;
+      margin-bottom: 1em;
+    }
+
+    #contact {
+      background-color: #f2f2f2;
+      padding: 2em 1.5em;
+      border-top: 4px solid var(--primary);
+    }
+
+    #contact h2 {
+      text-align: center;
+    }
+
+    #contact p {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 1.2em;
+    }
+
+    .contact-form {
+      max-width: 550px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    }
+
+    .form-group {
+      margin-bottom: 1em;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4em;
+      font-weight: bold;
+      color: var(--primary);
+      font-size: 0.95em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.65em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95em;
+      background: #fff;
+    }
+
+    .submit-btn {
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 0.6em 1.5em;
+      border: none;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #e0b347;
+    }
+
     footer {
       background: var(--primary);
       color: var(--light);
       text-align: center;
-      padding: 1em 0;
+      padding: 0.8em 0;
+      font-size: 0.9em;
     }
+
     #chatbot-toggle {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 16px;
+      right: 16px;
       background: var(--accent);
       color: var(--primary);
-      padding: 1em;
+      padding: 0.85em;
       border: none;
       border-radius: 50%;
-      font-size: 1.2em;
+      font-size: 1.1em;
       cursor: pointer;
       z-index: 1000;
     }
+
     #chatbot-container {
       position: fixed;
       bottom: 80px;
-      right: 20px;
-      width: 320px;
+      right: 16px;
+      width: 300px;
       background: #fff;
       border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
       display: none;
       flex-direction: column;
     }
+
     #chatbot-header {
       background: var(--primary);
       color: #fff;
-      padding: 1em;
+      padding: 0.9em;
       text-align: center;
     }
+
     #chatbot-messages {
       padding: 1em;
-      height: 200px;
+      height: 180px;
       overflow-y: auto;
-      font-size: 0.9em;
+      font-size: 0.88em;
     }
+
     #chatbot-input {
       display: flex;
       border-top: 1px solid #ccc;
     }
+
     #chatbot-input input {
       flex: 1;
-      padding: 0.75em;
+      padding: 0.65em;
       border: none;
+      font-size: 0.9em;
     }
+
     #chatbot-input button {
-      padding: 0.75em;
+      padding: 0.65em;
       background: var(--primary);
       color: #fff;
       border: none;
       cursor: pointer;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="images/Royalton-logo.jpg" alt="Royalton Financial Edge Logo" />
+    <img src="images/Royalton-logo.jpg" alt="Royalton Logo" />
     <nav>
       <ul>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#marketplace">Marketplace</a></li>
-        <li><a href="#onboarding">Onboarding</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Client Login</a></li>
+        <li><a href="#onboarding">New Client</a></li>
       </ul>
     </nav>
   </header>
 
   <section id="hero">
-    <h2>Smart Financial Solutions Powered by AI</h2>
-    <p>Your trusted edge in tax, budget, and business consulting.</p>
-    <a href="#marketplace" class="btn">Visit Our Marketplace</a>
-  </section>
-
-  <section id="services">
-    <h2>Our Services</h2>
-    <ul>
-      <li>🧾 Tax Filing</li>
-      <li>📊 Budget Planning</li>
-      <li>💼 Business Advisory</li>
-      <li>🔍 Tax Optimization</li>
-    </ul>
+    <h2>Smart Financial Solutions</h2>
+    <a href="#services" class="btn">Explore Our Services</a>
   </section>
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Royalton Financial Edge delivers cloud-powered financial clarity, backed by expert insight and AI-driven tools.</p>
+    <p>
+      Royalton Financial Edge is your trusted partner for comprehensive financial solutions.<br>
+      We specialize in tax filing, budgeting, and business consulting—leveraging technology to deliver personalized insights and strategic growth. Our team of experts is dedicated to helping you achieve your financial goals with personalized service and innovative tools.
+    </p>
   </section>
 
-  <section id="marketplace">
-    <h2>Marketplace</h2>
-    <p>Connect with consultants, browse packages, and boost your financial potential.</p>
+  <section id="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>✔️ Individual & Business Tax Filing</li>
+      <li>✔️ Tax Strategy and Planning</li>
+      <li>✔️ Budgeting & Forecasting</li>
+      <li>✔️ Business Consultancy & Management</li>
+      <li>✔️ AI-Powered Financial Tools</li>
+    </ul>
   </section>
 
   <section id="onboarding">
     <h2>New Client Onboarding</h2>
-    <ol>
-      <li>Create an account</li>
-      <li>Upload identity and tax docs</li>
-      <li>Get AI-assisted support</li>
-    </ol>
+    <p>Ready to begin? Let’s take the first step together.</p>
+
+    <h3>How to Get Started</h3>
+    <ul>
+      <li>Create an account on our platform</li>
+      <li>Upload identity and tax documents securely</li>
+      <li>Get AI-assisted support tailored to your needs</li>
+    </ul>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form method="POST" action="https://api.royalton-edge.com/contact">
-      <input type="text" name="name" placeholder="Your name" required />
-      <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Your message" required></textarea>
-      <button type="submit">Send Message</button>
+  <form method="POST" action="https://api.royalton-edge.com/contact" class="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="john@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" placeholder="How can we help you?" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn submit-btn">Send Message</button>
     </form>
   </section>
-
-  <button id="chatbot-toggle">💬</button>
-  <div id="chatbot-container">
-    <div id="chatbot-header">Ask Royalton AI</div>
-    <div id="chatbot-messages"></div>
-    <div id="chatbot-input">
-      <input type="text" placeholder="Type your question..." />
-      <button>Send</button>
-    </div>
-  </div>
 
   <footer>
     <p>&copy; 2025 Royalton Financial Edge. All rights reserved.</p>
   </footer>
 
+  <button id="chatbot-toggle">💬</button>
+
+  <div id="chatbot-container">
+    <div id="chatbot-header">Ask Royalton AI</div>
+    <div id="chatbot-messages">
+      <p><em>Hello! How can I help you today?</em></p>
+    </div>
+    <div id="chatbot-input">
+      <input type="text" id="user-input" placeholder="Ask a question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
   <script>
-    const toggleBtn = document.getElementById('chatbot-toggle');
-    const chatbotBox = document.getElementById('chatbot-container');
-    toggleBtn.addEventListener('click', () => {
-      chatbotBox.style.display = chatbotBox.style.display === 'flex' ? 'none' : 'flex';
-    });
+    const toggleBtn = document.getElementById("chatbot-toggle");
+    const chatbotContainer = document.getElementById("chatbot-container");
+    const messages = document.getElementById("chatbot-messages");
+    const userInput = document.getElementById("user-input");
+
+    toggleBtn.onclick = () => {
+      chatbotContainer.style.display =
+        chatbotContainer.style.display === "flex" ? "none" : "flex";
+    };
+
+    function sendMessage() {
+      const msg = userInput.value.trim();
+      if (msg) {
+        messages.innerHTML += `<p><strong>You:</strong> ${msg}</p>`;
+        messages.innerHTML += `<p><strong>AI:</strong> Thinking... (Replace with real backend)</p>`;
+        userInput.value = "";
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
   </script>
 </body>
 </html>
-
 
 
 
