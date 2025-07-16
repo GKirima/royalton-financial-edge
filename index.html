@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royalton Financial Edge</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #1F3E37;
+      --accent: #D4AF37;
+      --light: #ffffff;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 0.5em 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    #hero {
+      background: url('images/background.jpg') no-repeat center center/cover;
+      color: var(--light);
+      padding: 6em 2em;
+      text-align: center;
+    }
+    #hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+    .btn {
+      padding: 0.75em 1.5em;
+      background: var(--accent);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+    }
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 1em 0;
+    }
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1em;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2em;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    #chatbot-container {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      display: none;
+      flex-direction: column;
+    }
+    #chatbot-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+    #chatbot-messages {
+      padding: 1em;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 0.9em;
+    }
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #chatbot-input input {
+      flex: 1;
+      padding: 0.75em;
+      border: none;
+    }
+    #chatbot-input button {
+      padding: 0.75em;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/Royalton-logo.jpg" alt="Royalton Financial Edge Logo" />
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#marketplace">Marketplace</a></li>
+        <li><a href="#onboarding">Onboarding</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Smart Financial Solutions Powered by AI</h2>
+    <p>Your trusted edge in tax, budget, and business consulting.</p>
+    <a href="#marketplace" class="btn">Visit Our Marketplace</a>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>🧾 Tax Filing</li>
+      <li>📊 Budget Planning</li>
+      <li>💼 Business Advisory</li>
+      <li>🔍 Tax Optimization</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Royalton Financial Edge delivers cloud-powered financial clarity, backed by expert insight and AI-driven tools.</p>
+  </section>
+
+  <section id="marketplace">
+    <h2>Marketplace</h2>
+    <p>Connect with consultants, browse packages, and boost your financial potential.</p>
+  </section>
+
+  <section id="onboarding">
+    <h2>New Client Onboarding</h2>
+    <ol>
+      <li>Create an account</li>
+      <li>Upload identity and tax docs</li>
+      <li>Get AI-assisted support</li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form method="POST" action="https://api.royalton-edge.com/contact">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <button id="chatbot-toggle">💬</button>
+  <div id="chatbot-container">
+    <div id="chatbot-header">Ask Royalton AI</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" placeholder="Type your question..." />
+      <button>Send</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Royalton Financial Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('chatbot-toggle');
+    const chatbotBox = document.getElementById('chatbot-container');
+    toggleBtn.addEventListener('click', () => {
+      chatbotBox.style.display = chatbotBox.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Royalton Financial Edge</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --primary: #1F3E37;
+      --accent: #D4AF37;
+      --light: #ffffff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 0.5em 2em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #hero {
+      background: url('images/backgroundv.jpg') no-repeat center center/cover;
+      color: var(--light);
+      padding: 6em 2em;
+      text-align: center;
+    }
+
+    #hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .btn {
+      padding: 0.75em 1.5em;
+      background: var(--accent);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 2em;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #contact {
+      background-color: #f2f2f2;
+      padding: 3em 2em;
+      border-top: 4px solid var(--primary);
+    }
+
+    #contact h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    #contact p {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2em;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+    }
+
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1em;
+      background: #fff;
+    }
+
+    .submit-btn {
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 0.75em 2em;
+      border: none;
+      font-weight: bold;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #e0b347;
+    }
+
+    footer {
+      background: var(--primary);
+      color: var(--light);
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1em;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2em;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      display: none;
+      flex-direction: column;
+    }
+
+    #chatbot-header {
+      background: var(--primary);
+      color: #fff;
+      padding: 1em;
+      text-align: center;
+    }
+
+    #chatbot-messages {
+      padding: 1em;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 0.9em;
+    }
+
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    #chatbot-input input {
+      flex: 1;
+      padding: 0.75em;
+      border: none;
+    }
+
+    #chatbot-input button {
+      padding: 0.75em;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/Royalton-logo.jpg" alt="Royalton Logo" />
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#login">Client Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Smart Financial Solutions</h2>
+    <a href="#services" class="btn">Explore Our Services</a>
+  </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Royalton Financial Edge is your trusted partner for comprehensive financial solutions.<br> We specialize in tax filing, budgeting, and business consulting, leveraging AI to provide you with the best insights and strategies.
+        Our team of experts is dedicated to helping you achieve your financial goals with personalized service and innovative tools.</p>
+    </section>
+
+  <section id="services">
+    <h3>Our Services</h3>
+    <ul>
+      <li>✔️ Individual & Business Income Tax Filing</li>
+      <li>✔️ Tax Strategy and Planning</li>
+      <li>✔️ Budgeting & Financial Forecasting</li>
+      <li>✔️ Business Consultancy & Management</li>
+      <li>✔️ AI-Powered Financial Insights & Tools</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, need assistance, or want to schedule a consultation, we're here for you. Reach out using the form below or email us directly at <a href="mailto:support@royaltonedge.com">support@royaltonedge.com</a>.</p>
+   
+    <section id="onboarding">
+        <h2>New Client Onboarding</h2>
+        <ol>
+            <li>Create an account</li>
+            <li>Upload identity and tax docs</li>
+            <li>Get AI-assisted support</li>
+        </ol>
+  </section>
+
+    <form method="POST" action="https://api.royalton-edge.com/contact" class="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" id="name" placeholder="John Doe" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" placeholder="john@example.com" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea name="message" id="message" placeholder="How can we help you?" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Royalton Financial Edge. All rights reserved.</p>
+  </footer>
+
+  <button id="chatbot-toggle">💬</button>
+
+  <div id="chatbot-container">
+    <div id="chatbot-header">Ask Royalton AI</div>
+    <div id="chatbot-messages">
+      <p><em>Hello! How can I help you today?</em></p>
+    </div>
+    <div id="chatbot-input">
+      <input type="text" id="user-input" placeholder="Ask a question..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("chatbot-toggle");
+    const chatbotContainer = document.getElementById("chatbot-container");
+    const messages = document.getElementById("chatbot-messages");
+    const userInput = document.getElementById("user-input");
+
+    toggleBtn.onclick = () => {
+      chatbotContainer.style.display =
+        chatbotContainer.style.display === "flex" ? "none" : "flex";
+    };
+
+    function sendMessage() {
+      const msg = userInput.value.trim();
+      if (msg) {
+        messages.innerHTML += `<p><strong>You:</strong> ${msg}</p>`;
+        messages.innerHTML += `<p><strong>AI:</strong> Thinking... (Replace with real backend)</p>`;
+        userInput.value = "";
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
